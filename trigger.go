@@ -51,5 +51,5 @@ func (t *Trigger) key(name string) string {
 }
 
 func (t *Trigger) stateKey(name string) string {
-	return triggerKey{t.From, name}.String()
+	return triggerKey{t.To, name}.String()
 }
