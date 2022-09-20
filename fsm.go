@@ -98,11 +98,11 @@ func (f *FSM) CallbackWithState(name string, state uint32, triggerFunc TriggerFu
 func (f *FSM) trigger(ctx context.Context, name string, trigger *Trigger) {
 	t, ok := f.triggers.Get(trigger.stateKey(name))
 	if ok {
-		t(ctx, trigger)
+		t(ctx, name, trigger)
 	}
 	t, ok = f.triggers.Get(trigger.key(name))
 	if ok {
-		t(ctx, trigger)
+		t(ctx, name, trigger)
 	}
 }
 

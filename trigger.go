@@ -4,7 +4,7 @@ import (
 	"context"
 )
 
-type TriggerFunc func(ctx context.Context, trigger *Trigger)
+type TriggerFunc func(ctx context.Context, name string, trigger *Trigger)
 
 type Trigger struct {
 	// From is the state before the transition.
